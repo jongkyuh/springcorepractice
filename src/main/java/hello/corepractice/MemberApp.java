@@ -9,7 +9,10 @@ import hello.corepractice.member.MemberServiceImpl;
 // 순수 자바로 구현하기 위한 실행 클래스
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImpl();
+      //  MemberService memberService = new MemberServiceImpl();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
 
         Member member = new Member(1L,"memberA", Grade.VIP);
         memberService.join(member);
