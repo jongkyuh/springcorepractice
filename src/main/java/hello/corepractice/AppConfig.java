@@ -3,6 +3,7 @@ package hello.corepractice;
 import hello.corepractice.discount.DiscountPolicy;
 import hello.corepractice.discount.FixDiscountPolicy;
 import hello.corepractice.discount.RateDiscountPolicy;
+import hello.corepractice.member.MemberRepository;
 import hello.corepractice.member.MemberService;
 import hello.corepractice.member.MemberServiceImpl;
 import hello.corepractice.member.MemoryMemberRepository;
@@ -26,11 +27,13 @@ public class AppConfig {
 
     @Bean        // 스프링 컨테이너에 등록된다.
     public MemberService memberService(){
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    public static MemoryMemberRepository memberRepository() {
+    public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
@@ -40,6 +43,7 @@ public class AppConfig {
 
     @Bean
     public OrderService orderService(){
+        System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy());
     }
 
