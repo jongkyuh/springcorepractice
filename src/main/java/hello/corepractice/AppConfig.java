@@ -45,6 +45,7 @@ public class AppConfig {
     public OrderService orderService(){
         System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(),discountPolicy());
+//        return null;    // setter,필드 주입할때 잠깐 사용 하기위함.
     }
 
     //FixDiscountPolicy은 자동완성을 사용하지않고 적용
