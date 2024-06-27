@@ -6,10 +6,12 @@ import hello.corepractice.discount.RateDiscountPolicy;
 import hello.corepractice.member.Member;
 import hello.corepractice.member.MemberRepository;
 import hello.corepractice.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
 
 //    private MemberRepository memberRepository = new MemoryMemberRepository();
@@ -52,13 +54,13 @@ public class OrderServiceImpl implements OrderService{
 
     // 1.. 생성자 주입 방법, final 키워드가 있어야 한다.
     // 1.. 필드,setter 주입때는 주석처리하고 체크한다.
-    @Autowired    // 생성자가 하나일땐 Autowired 생략 가능
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        System.out.println("생성자 memberRepository = " + memberRepository);
-        System.out.println("생성자 discountPolicy = " + discountPolicy);
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
+//    @Autowired    // 생성자가 하나일땐 Autowired 생략 가능
+//    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+//        System.out.println("생성자 memberRepository = " + memberRepository);
+//        System.out.println("생성자 discountPolicy = " + discountPolicy);
+//        this.memberRepository = memberRepository;
+//        this.discountPolicy = discountPolicy;
+//    }
 
     // 일반 메소드 주입
 //    @Autowired
