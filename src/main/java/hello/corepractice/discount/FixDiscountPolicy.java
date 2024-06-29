@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component // 스프링 빈 중복을 위해 fixDiscountPolicy도 빈 등록
 @Qualifier("subDiscountPolicy")
-@Primary
+//@Primary
 public class FixDiscountPolicy implements DiscountPolicy{
 
     private int disccountFixAmount = 1000; // 고정 VIP 할인 금액
