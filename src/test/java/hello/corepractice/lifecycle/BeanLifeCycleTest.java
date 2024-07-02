@@ -11,13 +11,17 @@ public class BeanLifeCycleTest {
     @Test
     public void lifeCycleTest(){
        // AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
-        ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(NetworkClient.class);
+        ConfigurableApplicationContext ac = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
         NetworkClient client = ac.getBean(NetworkClient.class);
-        ac.close(); //close 메소드를 쓰기위해서 위에 두가지 방법으로 빈 등록을 해야한다.
+
+        //close 메소드를 쓰기위해서 위에 두가지 방법으로 빈 등록을 해야한다.
+        //컨테이너가 종료되어야 소멸자를 쓸 수 있다.
+        ac.close();
     }
 
     @Configuration
     static class LifeCycleConfig{
+        //@Bean(initMethod = "init",destroyMethod = "close")
         @Bean
         public NetworkClient networkClient(){
             NetworkClient networkClient = new NetworkClient();
