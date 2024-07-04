@@ -12,7 +12,7 @@ import hello.corepractice.order.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration  // 구성정보를를 담당하는 클래스다 라는것을 스프링에 알려준다.
+//@Configuration  // 구성정보를를 담당하는 클래스다 라는것을 스프링에 알려준다.
 public class AppConfig {
 
     // 기존 코드에서는 AppConfig 클래스의 코드만을 보고 어떤역할을 하는지에 대한 것을 보기가 어렵다 그래서 분리해야한다. 
